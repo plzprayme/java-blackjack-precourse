@@ -67,8 +67,7 @@ public class ScoreManager {
     }
 
     public int getSumScore(User user) {
-        int score = user.getCards()
-                .stream().mapToInt(Card::getSymbolByScore).sum();
+        int score = user.getCards().stream().mapToInt(Card::getSymbolByScore).sum();
 
         if (isContainAce(user)
                 && ((score + ACE_ELEVEN_MODE) <= BLACKJACK)) {

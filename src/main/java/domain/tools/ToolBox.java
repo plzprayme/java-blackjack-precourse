@@ -6,6 +6,7 @@ import domain.user.Player;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ToolBox {
     private static final String COMMA = ",";
@@ -33,12 +34,8 @@ public class ToolBox {
         return playerNameList;
     }
 
-    public List<String> makeNameList(List<Card> cards) {
-        List<String> cardList = new ArrayList<>();
-        for (Card card : cards) {
-            cardList.add(card.toString());
-        }
-        return cardList;
+    public List<String> makeNameList(List<Card> cards){
+        return cards.stream().map(i -> i.toString()).collect(Collectors.toList());;
     }
 
 }
